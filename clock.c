@@ -2,7 +2,7 @@
 #include<time.h>
 #include<stdlib.h>
 #include<unistd.h>
-
+//time function
 void fill_time(char* buffer, int format)
 {
     time_t rawtime; 
@@ -20,6 +20,8 @@ void fill_time(char* buffer, int format)
      
 
 }
+
+//date function
 void fill_date( char *buffer)
 {
     time_t rawtime; 
@@ -28,6 +30,8 @@ void fill_date( char *buffer)
     current_time=localtime(&rawtime); 
     strftime(buffer, 50, "%A %B %d %Y", current_time);
 }
+
+// clearing the screen
 void clearscreen()
 {
    #ifdef _WIN32  
@@ -36,6 +40,7 @@ void clearscreen()
  system("clear"); 
  #endif
 }
+
 int main()
 {
    char time[50];int format; char date[100]; 
@@ -51,7 +56,6 @@ int main()
      printf("Date: %s\n",date );
      sleep(1); 
    }
-  
 
     return 0;
 }
